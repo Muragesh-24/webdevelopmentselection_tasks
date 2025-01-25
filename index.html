@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+    header {
+      background: #007bff;
+      color: #ffffff;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header button {
+      background: #ffffff;
+      color: #007bff;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .container {
+      padding: 1rem;
+    }
+    .news-item {
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+    }
+    .news-item h3 {
+      margin: 0;
+    }
+    .news-item p {
+      margin: 0.5rem 0;
+    }
+    .filters {
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 1rem;
+    }
+    .filters select, .filters input {
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>News Website</h1>
+    <button id="toggleDarkMode">Toggle Dark Mode</button>
+  </header>
+
+  <div class="container">
+    <div class="filters">
+      <select id="categorySelect">
+        <option value="general">General</option>
+        <option value="technology">Technology</option>
+        <option value="sports">Sports</option>
+        <option value="business">Business</option>
+        <option value="health">Health</option>
+        <option value="science">Science</option>
+        <option value="entertainment">Entertainment</option>
+      </select>
+      <input type="text" id="searchInput" placeholder="Search news...">
+    </div>
+
+    <div id="newsContainer"></div>
+  </div>
+
+  <script>
+    const BASE_URL = "https://saurav.tech/NewsAPI/";
+    const topHeadlinesAPI = `${BASE_URL}top-headlines/category`;
+    const newsContainer = document.getElementById('newsContainer');
+    const categorySelect = document.getElementById('categorySelect');
+    const searchInput = document.getElementById('searchInput');
+    const toggleDarkModeButton = document.getElementById('toggleDarkMode');
+
+    // Fetch and display news
+    async function fetchNews(category = 'general') {
+      const url = `${topHeadlinesAPI}/${category}/in.json`;
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        displayNews(data.articles);
+      } catch (error) {
+        console.error('Error fetching news:', error);
+        newsContainer.innerHTML = '<p>Failed to load news.</p>';
+      }
+    }
+
+    function displayNews(articles) {
+      newsContainer.innerHTML = '';
+      articles.forEach(article => {
+        const newsItem = document.createElement('div');
+        newsItem.classList.add('news-item');
+        newsItem.innerHTML = `
+          <h3>${article.title}</h3>
+          <p>${article.description || 'No description available.'}</p>
+          <a href="${article.url}" target="_blank">Read more</a>
+        `;
+        newsContainer.appendChild(newsItem);
+      });
+    }
+
+    // Toggle dark mode
+    toggleDarkModeButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    // Filter news by category
+    categorySelect.addEventListener('change', () => {
+      const selectedCategory = categorySelect.value;
+      fetchNews(selectedCategory);
+    });
+
+    // Search functionality
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      const newsItems = document.querySelectorAll('.news-item');
+      newsItems.forEach(item => {
+        const title = item.querySelector('h3').textContent.toLowerCase();
+        item.style.display = title.includes(query) ? '' : 'none';
+      });
+    });
+
+    // Initial fetch
+    fetchNews();
+  </script>
+</body>
+</html>
