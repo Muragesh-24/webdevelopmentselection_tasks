@@ -1,0 +1,80 @@
+.collaboration-post {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .collaboration-post h2 {
+    text-align: center;
+  }
+  
+  .collaboration-post form {
+    margin-bottom: 20px;
+  }
+  
+  .collaboration-post input,
+  .collaboration-post textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .collaboration-post button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .collaboration-post button:hover {
+    background-color: #0056b3;
+  }
+  
+  .post {
+    border: 1px solid #ddd;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .comments {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .comment {
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    padding: 5px;
+    border-radius: 3px;
+  }
+  
+  .comment p {
+    margin: 0;
+  }
+  
+  textarea {
+    height: 100px;
+  }
+  
+  input[type="text"] {
+    width: calc(100% - 22px);
+    margin-right: 10px;
+  }
+  
+  button {
+    margin-left: 10px;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

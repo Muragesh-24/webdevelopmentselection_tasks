@@ -1,0 +1,59 @@
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1f2937; /* Dark background */
+    color: white;
+    
+    width: 100vw;
+  }
+  .logout{
+    background-color: #1f2937;
+    color: white;
+    font-weight: bolder;
+
+  }
+  
+  .navbar .logo h2 {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+  }
+  
+  .nav-links {
+    display: flex;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #4caf50; /* Green color on hover */
+  }
+  
+  /* For small screen sizes (mobile-friendly) */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+    }
+  
+    .nav-link {
+      margin: 10px 0;
+    }
+  }
+  

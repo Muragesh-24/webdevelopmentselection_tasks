@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f3f4f6;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .AUTH {
+    display: flex;
+   width: 100vw;
+   height: 100vh;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+ 
+  }
+  
+  .authleft {
+    flex: 1;
+    background: #0077b6; /* EngiGrow theme color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+  }
+  
+  .authleft h1 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .authleft p {
+    font-size: 1rem;
+    margin-top: 10px;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
+  .authright {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .authright h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #333333;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  form button {
+    padding: 10px 15px;
+    background: #0077b6;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  form button:hover {
+    background: #005f87;
+  }
+  
+  .authright button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: transparent;
+    color: #0077b6;
+    border: 1px solid #0077b6;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .authright button:hover {
+    background: #0077b6;
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .AUTH {
+      flex-direction: column;
+    }
+  
+    .authleft {
+      height: 200px;
+      flex: unset;
+    }
+  
+    .authright {
+      padding: 20px;
+    }
+  }
+  
