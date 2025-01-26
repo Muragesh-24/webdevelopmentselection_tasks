@@ -1,3 +1,6 @@
+I have  a Readme file
+
+in task 2 branch also which includes description about all routes. 
 # webdevelopmentselection_tasks <br>
 in main  branch <br>
 i have code for the first task ,https://muragesh-24.github.io/webdevelopmentselection_tasks/ and this is link for the first task ,i used 80-20 rule that is like writing my code fastly and for any correction i used chatgpt, but i belived i didnot blindly copied anything .. <br>
